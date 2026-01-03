@@ -97,7 +97,7 @@
         <!-- Footer -->
         <div class="text-center mt-8">
             <p class="text-gray-600 text-sm">
-                {{ __('© 2024 Admin Panel. All rights reserved.') }}
+                {{ __('© 2026 Admin Panel. All rights reserved.') }}
             </p>
         </div>
     </div>

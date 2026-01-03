@@ -14,31 +14,60 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
 
     <style>
         :root {
             /* Brown Color Palette */
-            --color-brown-primary: #80593c;
-            --color-brown-dark: #6b4a2f;
-            --color-brown-darker: #5d4037;
-            --color-brown-darkest: #4a2c20;
-            --color-brown-light: rgba(128, 89, 60, 0.1);
-            --color-brown-medium: rgba(128, 89, 60, 0.2);
-            --color-brown-lighter: rgba(128, 89, 60, 0.05);
+            --color-brown-primary: #a67c5a;
+            --color-brown-dark: #8f6546;
+            --color-brown-darker: #7a5745;
+            --color-brown-darkest: #6b4330;
+            --color-brown-light: rgba(166, 124, 90, 0.1);
+            --color-brown-medium: rgba(166, 124, 90, 0.2);
+            --color-brown-lighter: rgba(166, 124, 90, 0.05);
 
             /* Hover states */
-            --color-brown-hover: #6b4a2f;
-            --color-brown-hover-light: rgba(107, 74, 47, 0.1);
+            --color-brown-hover: #8f6546;
+            --color-brown-hover-light: rgba(143, 101, 70, 0.1);
 
             /* Text colors */
-            --color-text-brown: #80593c;
-            --color-text-brown-light: rgba(128, 89, 60, 0.7);
-            --color-text-brown-lighter: rgba(128, 89, 60, 0.5);
+            --color-text-brown: #a67c5a;
+            --color-text-brown-light: rgba(166, 124, 90, 0.7);
+            --color-text-brown-lighter: rgba(166, 124, 90, 0.5);
         }
 
         body {
             font-family: 'Poppins', sans-serif;
+        }
+
+        /* Logo Styling */
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, var(--color-brown-primary), var(--color-brown-darker));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .logo-text .logo-part-2 {
+            letter-spacing: 0.08em;
+            font-weight: 700;
+        }
+
+        .logo-text-white {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: white;
+        }
+
+        .logo-text-white .logo-part-2 {
+            letter-spacing: 0.08em;
+            font-weight: 700;
         }
 
         /* Live Sale Notification Animation */
@@ -431,10 +460,10 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="{{ route('home') }}"
-                        class="group flex items-center {{ app()->getLocale() === 'ar' ? 'space-x-reverse space-x-2' : 'space-x-2' }} hover:opacity-80 transition-opacity duration-300">
-                        <img src="{{ asset('images/logo.png') }}" alt="{{ __('messages.business_name') }}"
-                            class="h-20 sm:h-24 md:h-28 lg:h-32 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
-                            onerror="this.onerror=null; this.src='{{ asset('images/logo.jpg') }}';">
+                        class="group flex items-center hover:opacity-90 transition-opacity duration-300">
+                        <span class="logo-text text-2xl sm:text-3xl md:text-4xl group-hover:scale-105 transition-transform duration-300">
+                            Kayna<span class="logo-part-2">Style</span>
+                        </span>
                     </a>
                 </div>
 
@@ -494,7 +523,7 @@
                             </span>
                             <span id="current-lang" class="text-gray-700">
                                 @if (app()->getLocale() === 'ar')
-                                   AR
+                                   العربية
                                 @elseif(app()->getLocale() === 'en')
                                     EN
                                 @elseif(app()->getLocale() === 'fr')
@@ -631,7 +660,7 @@
                     <!-- Icon/Title for Mobile -->
                     <div class="text-center md:text-left mb-6">
                         <div class="inline-flex md:hidden items-center justify-center w-16 h-16 rounded-full mb-4 shadow-lg"
-                            style="background: linear-gradient(135deg, #80593c, #5d4037);">
+                            style="background: linear-gradient(135deg, #a67c5a, #7a5745);">
                             <i class="fas fa-envelope-open text-white text-2xl"></i>
                         </div>
                         <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
@@ -651,7 +680,7 @@
                         </div>
                         <button type="submit"
                             class="w-full px-6 py-3 rounded-lg font-semibold text-base transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-white"
-                            style="background: linear-gradient(to right, #80593c, #5d4037);">
+                            style="background: linear-gradient(to right, #a67c5a, #7a5745);">
                             <i class="fas fa-paper-plane {{ app()->getLocale() === 'ar' ? 'ml-2' : 'mr-2' }}"></i>
                             <span>{{ __('messages.subscribe') }}</span>
                         </button>
@@ -696,14 +725,14 @@
             <!-- Notification Content -->
             <div class="flex-1 min-w-0 pr-7 md:pr-8">
                 <p class="text-sm md:text-sm font-medium text-gray-600 mb-1.5 md:mb-1.5" id="notificationText"
-                    style="color: #80593c;">
+                    style="color: #a67c5a;">
                     {{ __('messages.someone_purchased') }}
                 </p>
                 <p class="text-base md:text-base lg:text-lg font-bold text-gray-900 mb-1.5 md:mb-1.5 line-clamp-2 leading-tight"
                     id="notificationProductName" style="color: #1f2937;">
                     Product Name
                 </p>
-                <p class="text-sm md:text-sm text-gray-500" id="notificationTime" style="color: #80593c;">
+                <p class="text-sm md:text-sm text-gray-500" id="notificationTime" style="color: #a67c5a;">
                     46 minutes ago
                 </p>
             </div>
@@ -785,9 +814,9 @@
                 <!-- KaynaStyle Section -->
                 <div>
                     <div class="mb-3 sm:mb-4">
-                        <img src="{{ asset('images/logo.png') }}" alt="{{ __('messages.business_name') }}"
-                            class="h-20 sm:h-24 md:h-28 w-auto object-contain"
-                            onerror="this.onerror=null; this.src='{{ asset('images/logo.jpg') }}';">
+                        <span class="logo-text-white text-3xl sm:text-4xl md:text-5xl">
+                            Kayna<span class="logo-part-2">Style</span>
+                        </span>
                     </div>
                     <p class="text-gray-300 text-sm sm:text-base mb-2">
                         {{ __('messages.business_name_full') }}
@@ -851,7 +880,7 @@
             <div class="border-t border-gray-700 mt-6 sm:mt-8 pt-4 sm:pt-8">
                 <div class="flex flex-col sm:flex-row items-center justify-self-center">
                     <div class="text-center sm:text-left">
-                        <p class="text-gray-300 text-xs sm:text-sm">&copy; 2024 {{ __('messages.business_name') }}.
+                        <p class="text-gray-300 text-xs sm:text-sm">&copy; 2026 {{ __('messages.business_name') }}.
                             {{ __('messages.all_rights_reserved') }}</p>
                     </div>
                 </div>
@@ -1399,6 +1428,25 @@
             initCountdownTimer();
         });
     </script>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/19176952890?text={{ urlencode(__('messages.hello_whatsapp_message')) }}"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="fixed {{ app()->getLocale() === 'ar' ? 'left-4 sm:left-6' : 'right-4 sm:right-6' }} bottom-20 sm:bottom-6 z-50 group animate-bounce hover:animate-none"
+       aria-label="WhatsApp"
+       style="animation-duration: 3s; animation-iteration-count: 3;">
+        <div class="flex items-center {{ app()->getLocale() === 'ar' ? 'flex-row-reverse' : '' }} gap-3 bg-white rounded-full shadow-2xl hover:shadow-green-500/50 transition-all duration-300 transform hover:scale-110 border border-gray-100">
+            <!-- WhatsApp Icon -->
+            <div class="w-14 h-14 sm:w-16 sm:h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg group-hover:bg-green-600 transition-colors duration-300">
+                <i class="fab fa-whatsapp text-white text-2xl sm:text-3xl"></i>
+            </div>
+            <!-- Text Label (hidden on mobile, shown on larger screens) -->
+            <div class="hidden lg:block pr-3 pl-3 {{ app()->getLocale() === 'ar' ? 'pr-0' : 'pl-0' }}">
+                <span class="text-sm font-semibold text-gray-700 whitespace-nowrap">{{ __('messages.contact_us') }}</span>
+            </div>
+        </div>
+    </a>
 
     @stack('scripts')
 </body>

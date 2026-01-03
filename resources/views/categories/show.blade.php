@@ -383,15 +383,15 @@
 
     /* Custom Brown Color Classes */
     .bg-brown-light {
-        background-color: rgba(128, 89, 60, 0.1);
+        background-color: rgba(166, 124, 90, 0.1);
     }
 
     .bg-brown-medium {
-        background-color: rgba(128, 89, 60, 0.2);
+        background-color: rgba(166, 124, 90, 0.2);
     }
 
     .text-brown-primary {
-        color: #80593c;
+        color: #a67c5a;
     }
 
     /* Dual Range Slider Styles */
@@ -568,7 +568,7 @@
         justify-content: center;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         text-decoration: none;
-        color: #80593c;
+        color: #a67c5a;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         border: none;
         cursor: pointer;
@@ -593,7 +593,7 @@
         background: white;
         transform: scale(1.15) translateY(-2px);
         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-        color: #6b4a2f;
+        color: #8f6546;
         animation: buttonPulse 0.6s ease-out;
     }
 

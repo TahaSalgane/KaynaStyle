@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'welcome' => 'AtlasHandCraft',
-    'welcome_full' => 'Welcome to AtlasHandCraft - Traditional Moroccan Handmade Products',
+    'welcome' => 'KaynaStyle',
+    'welcome_full' => 'Welcome to KaynaStyle - Modern Streetwear & Essential Looks for Girls',
     'home' => 'Home',
     'products' => 'Products',
     'categories' => 'Categories',
@@ -40,7 +40,7 @@ return [
     'order_success_message' => 'Thank you for your order! We will deliver it within 24 hours.',
     'pajamas' => 'Moroccan Bags',
     'pants' => 'Traditional Accessories',
-    'dresses' => 'Handmade Crafts',
+    'dresses' => 'Fashion Accessories',
     'all_products' => 'All Products',
     'filter_by_category' => 'Filter by Category',
     'sort_by' => 'Sort by',
@@ -252,7 +252,7 @@ return [
     'hello_want_ask_about' => 'Hello, I want to ask about',
     'free_delivery_24h_text' => 'Free delivery within 24 hours',
     'all_rights_reserved' => 'All rights reserved',
-    'business_name' => 'AtlasHandCraft',
+    'business_name' => 'KaynaStyle',
     'business_name_full' => 'Own Your Style. Be Kayna.',
     'error_processing_order' => 'Error processing order',
     'error_submitting_question' => 'Error submitting question',
@@ -303,10 +303,10 @@ return [
 
     // Privacy Policy
     'privacy_intro_title' => 'Introduction',
-    'privacy_intro_text' => 'At our Moroccan handmade traditional store, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and purchase our authentic Moroccan leather bags and handcrafted products.',
+    'privacy_intro_text' => 'At KaynaStyle, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and purchase our modern streetwear and essential clothing for girls.',
     'information_we_collect' => 'Information We Collect',
     'information_we_collect_text' => 'We collect information that you provide directly to us when you:',
-    'info_collect_1' => 'Place an order for our handmade Moroccan products',
+    'info_collect_1' => 'Place an order for our clothing and fashion items',
     'info_collect_2' => 'Create an account or update your profile',
     'info_collect_3' => 'Subscribe to our newsletter or marketing communications',
     'info_collect_4' => 'Contact us for customer support or inquiries',
@@ -332,9 +332,9 @@ return [
 
     // Shipping Policy
     'shipping_intro_title' => 'Shipping Information',
-    'shipping_intro_text' => 'We are dedicated to delivering your authentic Moroccan handmade products safely and securely. All our traditional leather bags and handcrafted items are carefully packaged and shipped from Morocco to your location worldwide.',
+    'shipping_intro_text' => 'We are dedicated to delivering your stylish clothing and fashion items safely and securely. All our modern streetwear and essential looks are carefully packaged and shipped to your location worldwide.',
     'processing_time' => 'Processing Time',
-    'processing_time_text' => 'Each of our handmade products is crafted with care and attention to detail. Please allow time for preparation:',
+    'processing_time_text' => 'Each of our clothing items is carefully selected and prepared with attention to detail. Please allow time for preparation:',
     'preparation_time' => 'Preparation Time',
     'preparation_time_text' => '3-5 days',
     'shipping_methods' => 'Shipping Methods',
@@ -362,7 +362,7 @@ return [
 
     // Refunds & Return Policy
     'return_policy_intro_title' => 'Return Policy',
-    'return_policy_intro_text' => 'We want you to be completely satisfied with your purchase of our authentic Moroccan handmade products. If you are not satisfied, we offer a straightforward return and refund process.',
+    'return_policy_intro_text' => 'We want you to be completely satisfied with your purchase of our clothing and fashion items. If you are not satisfied, we offer a straightforward return and refund process.',
     'return_eligibility' => 'Return Eligibility',
     'return_eligibility_text' => 'To be eligible for a return, your item must be:',
     'return_timeframe' => 'Return Timeframe',
@@ -375,7 +375,7 @@ return [
     'return_condition_4' => 'With original receipt or proof of purchase',
     'refund_process' => 'Refund Process',
     'refund_process_text' => 'To initiate a return:',
-    'refund_step_1' => 'Contact us at contact@atlashandcraft.com within 14 days of delivery',
+    'refund_step_1' => 'Contact us at contact@kaynastyle.com within 14 days of delivery',
     'refund_step_2' => 'Provide your order number and reason for return',
     'refund_step_3' => 'We will provide you with return instructions',
     'refund_step_4' => 'Once we receive and inspect the item, we will process your refund',
@@ -401,11 +401,11 @@ return [
 
     // Terms & Conditions
     'terms_intro_title' => 'Terms of Service',
-    'terms_intro_text' => 'Welcome to our traditional Moroccan handmade store. By accessing and using our website, you agree to comply with and be bound by the following terms and conditions.',
+    'terms_intro_text' => 'Welcome to KaynaStyle, your destination for modern streetwear and essential looks for girls. By accessing and using our website, you agree to comply with and be bound by the following terms and conditions.',
     'acceptance_terms' => 'Acceptance of Terms',
     'acceptance_terms_text' => 'By accessing this website and purchasing our products, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.',
     'products_services' => 'Products and Services',
-    'products_services_text' => 'We offer authentic Moroccan handmade products including leather bags, traditional accessories, and handcrafted items. All products are handcrafted in Morocco with traditional techniques passed down through generations.',
+    'products_services_text' => 'We offer modern streetwear and essential clothing for girls, including trendy hoodies, matching sets, stylish tops, and fashion accessories. All products are carefully selected to help you express your unique style and feel confident.',
     'orders_pricing' => 'Orders and Pricing',
     'orders_pricing_text' => 'All orders are subject to product availability. We reserve the right to refuse or cancel any order. Pricing is subject to change without notice.',
     'pricing_term_1' => 'All prices are in USD unless otherwise stated',
@@ -429,7 +429,7 @@ return [
 
     // Payment Policy
     'payment_intro_title' => 'Payment Information',
-    'payment_intro_text' => 'We offer secure and convenient payment options for purchasing our authentic Moroccan handmade products. All transactions are processed securely to protect your financial information.',
+    'payment_intro_text' => 'We offer secure and convenient payment options for purchasing our clothing and fashion items. All transactions are processed securely to protect your financial information.',
     'accepted_payment_methods' => 'Accepted Payment Methods',
     'accepted_payment_methods_text' => 'We accept the following payment methods:',
     'payment_method_1' => 'Credit Cards (Visa, Mastercard, American Express)',
@@ -455,10 +455,10 @@ return [
     'discover_best_sellers' => 'Discover our most popular and best-selling products',
     'bestseller' => 'Bestseller',
     'our_story' => 'Our Story',
-    'our_story_text_1' => 'AtlasHandCraft was born from a passion for preserving the rich heritage of Moroccan craftsmanship. We work directly with skilled artisans across Morocco to bring you authentic, handcrafted products that tell a story.',
-    'our_story_text_2' => 'Each piece in our collection is carefully made by hand using traditional techniques passed down through generations. We believe in supporting local artisans and bringing their beautiful work to customers worldwide.',
-    'our_story_text_3' => 'From leather bags to traditional accessories, every product reflects the artistry and cultural richness of Morocco. When you shop with us, you\'re not just buying a product—you\'re supporting a tradition.',
-    'handmade' => '100% Handmade',
+    'our_story_text_1' => 'KaynaStyle was born from a passion for modern fashion and empowering girls to express their unique style. We curate the latest streetwear trends and essential looks to help you feel confident and authentic.',
+    'our_story_text_2' => 'Each piece in our collection is carefully selected to ensure quality, style, and comfort. We believe in offering fashion-forward clothing that makes you feel like your true self, whether you\'re going for a casual streetwear look or a more polished essential style.',
+    'our_story_text_3' => 'From trendy hoodies to matching sets and stylish accessories, every product reflects our commitment to quality and style. When you shop with us, you\'re not just buying clothes—you\'re investing in your personal style and confidence.',
+    'handmade' => 'Quality Fashion',
     'authentic' => 'Authentic',
     'worldwide_shipping' => 'Worldwide Shipping',
     'years_experience' => 'Years of Experience',
@@ -503,9 +503,9 @@ return [
     'faq_question_2' => 'What is your return policy?',
     'faq_answer_2' => 'Items returned within 14 days of their original shipment date in the same condition will be eligible for a full refund or store credit. The customer is responsible for return shipping charges. All sale items are final purchases.',
     'faq_question_3' => 'Do you ship internationally?',
-    'faq_answer_3' => 'Yes, we ship worldwide! We use reliable carriers like DHL Express, FedEx, and Aramex to ensure your handmade products arrive safely. Shipping times vary by location but typically range from 5-10 business days.',
-    'faq_question_4' => 'Are your products handmade?',
-    'faq_answer_4' => 'Yes, all our products are authentic Moroccan handmade items crafted by skilled artisans. Each piece is unique and made with traditional techniques passed down through generations.',
+    'faq_answer_3' => 'Yes, we ship worldwide! We use reliable carriers like DHL Express, FedEx, and Aramex to ensure your clothing arrives safely. Shipping times vary by location but typically range from 5-10 business days.',
+    'faq_question_4' => 'What types of clothing do you offer?',
+    'faq_answer_4' => 'We offer modern streetwear and essential looks for girls, including trendy hoodies, matching sets, stylish tops, and fashion accessories. All products are carefully selected for quality, style, and comfort.',
     'faq_question_5' => 'How can I track my order?',
     'faq_answer_5' => 'Once your order ships, you will receive an email with a tracking number. You can use this number to track your package on the carrier\'s website (DHL, FedEx, or Aramex).',
     'faq_need_help' => 'Still have questions?',
@@ -574,6 +574,7 @@ return [
     'cash_on_delivery' => 'Cash on Delivery',
     'cash_on_delivery_text' => 'Pay when you receive your order',
     'good_quality' => 'Premium Quality',
-    'good_quality_text' => 'Handcrafted with care and attention',
+    'good_quality_text' => 'Carefully selected for quality and style',
+    'hello_whatsapp_message' => 'Hello! I need help with your products.',
 ];
 

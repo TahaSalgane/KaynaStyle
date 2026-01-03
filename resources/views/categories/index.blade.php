@@ -208,7 +208,7 @@
 
         .gradient-text {
             position: relative;
-            background: linear-gradient(135deg, #80593c, #5d4037, #80593c);
+            background: linear-gradient(135deg, #a67c5a, #7a5745, #a67c5a);
             background-size: 200% 200%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;

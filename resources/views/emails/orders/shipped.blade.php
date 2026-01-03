@@ -12,7 +12,7 @@
                 <table role="presentation" style="max-width: 600px; width: 100%; border-collapse: collapse; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
                     <!-- Header with Logo -->
                     <tr>
-                        <td style="background: linear-gradient(135deg, #80593c, #5d4037); padding: 40px 30px; text-align: center;">
+                        <td style="background: linear-gradient(135deg, #a67c5a, #7a5745); padding: 40px 30px; text-align: center;">
                             <img src="{{ url('images/logo.png') }}" alt="{{ __('messages.business_name') }}" style="max-height: 60px; width: auto; margin-bottom: 20px;" onerror="this.style.display='none';">
                             <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700;">{{ __('messages.business_name') }}</h1>
                         </td>
@@ -25,7 +25,7 @@
                             <p style="margin: 0 0 20px 0; color: #4b5563; font-size: 16px; line-height: 1.6;">{{ __('messages.order_shipped_intro', ['order_number' => $order->order_number]) }}</p>
 
                             <!-- Order Details Box -->
-                            <div style="background-color: #f9fafb; border-radius: 8px; padding: 20px; margin: 30px 0; border-left: 4px solid #80593c;">
+                            <div style="background-color: #f9fafb; border-radius: 8px; padding: 20px; margin: 30px 0; border-left: 4px solid #a67c5a;">
                                 <h3 style="margin: 0 0 15px 0; color: #1f2937; font-size: 18px; font-weight: 600;">{{ __('messages.order_details') }}</h3>
                                 <table role="presentation" style="width: 100%; border-collapse: collapse;">
                                     <tr>
@@ -75,7 +75,7 @@
 
                             <!-- CTA Button -->
                             <div style="text-align: center; margin: 30px 0;">
-                                <a href="{{ route('orders.thank-you', $order->access_token) }}" style="display: inline-block; background: linear-gradient(135deg, #80593c, #5d4037); color: #ffffff; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 16px;">{{ __('messages.view_order_details') }}</a>
+                                <a href="{{ route('orders.thank-you', $order->access_token) }}" style="display: inline-block; background: linear-gradient(135deg, #a67c5a, #7a5745); color: #ffffff; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 16px;">{{ __('messages.view_order_details') }}</a>
                             </div>
 
                             <!-- Footer -->

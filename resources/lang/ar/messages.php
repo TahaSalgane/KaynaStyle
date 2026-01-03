@@ -157,7 +157,7 @@ return [
     'error_adding_to_cart' => 'خطأ في إضافة المنتج للسلة',
     'limited_time_offer' => 'عرض محدود الوقت!',
     'sale_ends_soon' => 'ينتهي العرض قريباً',
-    'ends_in' => 'ينتهي خلال',
+    'ends_in' => 'العرض سينتهي خلال',
     'days' => 'أيام',
     'hours' => 'ساعات',
     'minutes' => 'دقائق',
@@ -574,5 +574,6 @@ return [
     'cash_on_delivery' => 'الدفع عند الاستلام',
     'cash_on_delivery_text' => 'ادفع عند استلام طلبك',
     'good_quality' => 'جودة ممتازة',
-    'good_quality_text' => 'مصنوع يدوياً بعناية واهتمام',
+    'good_quality_text' => 'مختارة بعناية للجودة والأناقة',
+    'hello_whatsapp_message' => 'مرحبا! أحتاج المساعدة بخصوص منتجاتكم.',
 ];

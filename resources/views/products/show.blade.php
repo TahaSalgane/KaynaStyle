@@ -391,7 +391,7 @@
                                 <div class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center mb-1.5">
                                     <i class="fas fa-truck text-white text-xs"></i>
                                 </div>
-                                <span class="text-xs font-medium text-gray-700 text-center leading-tight">شحن مجاني</span>
+                                <span class="text-xs font-medium text-gray-700 text-center leading-tight">{{ __('messages.free_shipping') }}</span>
                             </div>
 
                             <!-- Cash on Delivery -->
@@ -400,8 +400,7 @@
                                 <div class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center mb-1.5">
                                     <i class="fas fa-money-bill-wave text-white text-xs"></i>
                                 </div>
-                                <span class="text-xs font-medium text-gray-700 text-center leading-tight">الدفع عند
-                                    الاستلام</span>
+                                <span class="text-xs font-medium text-gray-700 text-center leading-tight">{{ __('messages.cash_on_delivery') }}</span>
                             </div>
 
                             <!-- Premium Quality -->
@@ -410,8 +409,7 @@
                                 <div class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center mb-1.5">
                                     <i class="fas fa-award text-white text-xs"></i>
                                 </div>
-                                <span class="text-xs font-medium text-gray-700 text-center leading-tight">جودة
-                                    ممتازة</span>
+                                <span class="text-xs font-medium text-gray-700 text-center leading-tight">{{ __('messages.good_quality') }}</span>
                             </div>
                         </div>
                     </div>
@@ -506,9 +504,10 @@
 
                             <!-- Submit Button -->
                             <button type="submit" id="submit-order-btn"
-                                class="group relative w-full overflow-hidden bg-gradient-to-r from-emerald-500 via-green-600 to-emerald-600 text-white py-2 px-6 rounded-2xl text-lg font-bold transition-all duration-500 transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-500/40 shadow-xl border border-emerald-400/30">
+                                class="group relative w-full overflow-hidden text-white py-2 px-6 rounded-2xl text-lg font-bold transition-all duration-500 transform hover:scale-[1.02] hover:shadow-2xl shadow-xl border"
+                                style="background: linear-gradient(to right, var(--color-brown-primary), var(--color-brown-dark), var(--color-brown-darker)); border-color: rgba(166, 124, 90, 0.3); box-shadow: 0 20px 25px -5px rgba(166, 124, 90, 0.2), 0 10px 10px -5px rgba(166, 124, 90, 0.1);">
                                 <div
-                                    class="absolute inset-0 bg-gradient-to-r from-emerald-400/0 via-white/20 to-emerald-400/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700">
+                                    class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700">
                                 </div>
                                 <div class="relative flex items-center justify-center">
                                     <span class="tracking-wide">{{ __('messages.confirm_order') }}</span>
@@ -1077,13 +1076,13 @@
 
         /* Button hover effects */
         #submit-order-btn:hover {
-            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.4), 0 0 20px rgba(16, 185, 129, 0.2);
+            box-shadow: 0 20px 40px rgba(166, 124, 90, 0.4), 0 0 20px rgba(166, 124, 90, 0.2);
         }
 
         /* Focus states for accessibility */
         #submit-order-btn:focus-visible,
         button[onclick="hideCheckoutForm()"]:focus-visible {
-            outline: 2px solid #10b981;
+            outline: 2px solid var(--color-brown-primary);
             outline-offset: 2px;
         }
 

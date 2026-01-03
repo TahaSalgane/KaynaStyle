@@ -40,7 +40,7 @@ return [
     'order_success_message' => '¡Gracias por tu pedido! Lo entregaremos en 24 horas.',
     'pajamas' => 'Bolsos Marroquíes',
     'pants' => 'Accesorios Tradicionales',
-    'dresses' => 'Artesanías Hechas a Mano',
+    'dresses' => 'Accesorios de Moda',
     'all_products' => 'Todos los productos',
     'filter_by_category' => 'Filtrar por categoría',
     'sort_by' => 'Ordenar por',
@@ -565,5 +565,12 @@ return [
     'our_response' => 'Nuestra respuesta',
     'need_more_help' => '¿Necesita más ayuda?',
     'contact_us_again_message' => 'Si tiene alguna pregunta adicional o necesita más asistencia, no dude en contactarnos nuevamente.',
+    'hello_whatsapp_message' => '¡Hola! Necesito ayuda con sus productos.',
+    
+    // Trust Badges
+    'cash_on_delivery' => 'Pago contra Reembolso',
+    'cash_on_delivery_text' => 'Paga cuando recibas tu pedido',
+    'good_quality' => 'Calidad Premium',
+    'good_quality_text' => 'Cuidadosamente seleccionado por calidad y estilo',
 ];
 

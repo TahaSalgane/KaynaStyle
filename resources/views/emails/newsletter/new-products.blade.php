@@ -12,7 +12,7 @@
                 <table role="presentation" style="max-width: 600px; width: 100%; border-collapse: collapse; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
                     <!-- Header with Logo -->
                     <tr>
-                        <td style="background: linear-gradient(135deg, #80593c, #5d4037); padding: 40px 30px; text-align: center;">
+                        <td style="background: linear-gradient(135deg, #a67c5a, #7a5745); padding: 40px 30px; text-align: center;">
                             <img src="{{ config('app.url') }}/images/logo.png" alt="{{ __('messages.business_name') }}" style="max-height: 60px; width: auto; margin-bottom: 20px;" onerror="this.style.display='none';">
                             <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700;">{{ __('messages.business_name') }}</h1>
                         </td>
@@ -36,8 +36,8 @@
                                                 </td>
                                                 <td style="vertical-align: top;">
                                                     <h3 style="margin: 0 0 10px 0; color: #1f2937; font-size: 18px; font-weight: 600;">{{ $product['name'] }}</h3>
-                                                    <p style="margin: 0 0 15px 0; color: #80593c; font-size: 20px; font-weight: 700;">${{ number_format($product['price'], 2) }}</p>
-                                                    <a href="{{ $product['url'] }}" style="display: inline-block; padding: 12px 24px; background: linear-gradient(135deg, #80593c, #5d4037); color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px;">{{ __('messages.view_product') }}</a>
+                                                    <p style="margin: 0 0 15px 0; color: #a67c5a; font-size: 20px; font-weight: 700;">${{ number_format($product['price'], 2) }}</p>
+                                                    <a href="{{ $product['url'] }}" style="display: inline-block; padding: 12px 24px; background: linear-gradient(135deg, #a67c5a, #7a5745); color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px;">{{ __('messages.view_product') }}</a>
                                                 </td>
                                             </tr>
                                         </table>
@@ -51,7 +51,7 @@
                             <table role="presentation" style="width: 100%; border-collapse: collapse; margin-top: 30px;">
                                 <tr>
                                     <td align="center">
-                                        <a href="{{ config('app.url') }}/products" style="display: inline-block; padding: 16px 32px; background: linear-gradient(135deg, #80593c, #5d4037); color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 16px;">{{ __('messages.view_all_products') }}</a>
+                                        <a href="{{ config('app.url') }}/products" style="display: inline-block; padding: 16px 32px; background: linear-gradient(135deg, #a67c5a, #7a5745); color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 16px;">{{ __('messages.view_all_products') }}</a>
                                     </td>
                                 </tr>
                             </table>
@@ -66,7 +66,7 @@
                             <p style="margin: 0 0 10px 0; color: #6b7280; font-size: 12px;">{{ __('messages.email') }}: contact@kaynastyle.com</p>
                             <p style="margin: 0; color: #9ca3af; font-size: 12px;">{{ __('messages.newsletter_privacy') }}</p>
                             <p style="margin: 15px 0 0 0;">
-                                <a href="{{ config('app.url') }}/newsletter/unsubscribe/{{ urlencode($subscriberEmail ?? '') }}" style="color: #80593c; text-decoration: underline; font-size: 12px;">{{ __('messages.unsubscribe') }}</a>
+                                <a href="{{ config('app.url') }}/newsletter/unsubscribe/{{ urlencode($subscriberEmail ?? '') }}" style="color: #a67c5a; text-decoration: underline; font-size: 12px;">{{ __('messages.unsubscribe') }}</a>
                             </p>
                         </td>
                     </tr>

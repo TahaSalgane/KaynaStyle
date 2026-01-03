@@ -864,7 +864,7 @@
             justify-content: center;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
-            color: #80593c;
+            color: #a67c5a;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
             border: none;
             cursor: pointer;
@@ -889,7 +889,7 @@
             background: white;
             transform: scale(1.15) translateY(-2px);
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-            color: #6b4a2f;
+            color: #8f6546;
             animation: buttonPulse 0.6s ease-out;
         }
 
@@ -988,7 +988,7 @@
 
         /* Gradient text effect */
         .gradient-text {
-            background: linear-gradient(135deg, #80593c, #5d4037);
+            background: linear-gradient(135deg, #a67c5a, #7a5745);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -1321,7 +1321,7 @@
         }
 
         .stat-number {
-            background: linear-gradient(135deg, #80593c, #a0522d);
+            background: linear-gradient(135deg, #a67c5a, #8f6546);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -1342,7 +1342,7 @@
         /* Enhanced Gradient Text */
         .gradient-text {
             position: relative;
-            background: linear-gradient(135deg, #80593c, #5d4037, #80593c);
+            background: linear-gradient(135deg, #a67c5a, #7a5745, #a67c5a);
             background-size: 200% 200%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -1466,7 +1466,7 @@
         }
 
         .testimonial-indicator.active {
-            background-color: #80593c;
+            background-color: #a67c5a;
             width: 2rem;
         }
 
@@ -1901,9 +1901,6 @@
 
             function updateCarousel() {
                 const slidesToShow = getSlidesToShow();
-                // For fractional slides (like 2.5), round down for maxIndex calculation
-                const maxIndex = Math.max(0, totalSlides - Math.ceil(slidesToShow));
-                currentIndex = Math.min(currentIndex, maxIndex);
 
                 // Check if RTL (Arabic)
                 const isRTL = document.documentElement.dir === 'rtl' || document.documentElement.lang === 'ar';
@@ -1914,26 +1911,87 @@
                     const slideWidth = firstSlide.offsetWidth;
                     const gap = window.getComputedStyle(carousel).gap;
                     const gapValue = parseFloat(gap) || 0;
+
+                    // Get container to calculate max scroll
+                    const container = carousel.parentElement;
+                    const containerWidth = container.offsetWidth;
+
+                    // Calculate total width of all slides including gaps
+                    const totalCarouselWidth = (slideWidth + gapValue) * totalSlides - gapValue;
+
+                    // Calculate maxIndex: ensure last slide is fully visible
+                    // The last slide should be fully visible, so calculate the max scroll position
+                    const lastSlideStartPosition = (totalSlides - 1) * (slideWidth + gapValue);
+                    const maxScrollNeeded = Math.max(0, lastSlideStartPosition + slideWidth - containerWidth);
+
+                    // Convert max scroll to maxIndex
+                    let maxIndex = 0;
+                    if (maxScrollNeeded > 0) {
+                        maxIndex = Math.ceil(maxScrollNeeded / (slideWidth + gapValue));
+                        // Don't exceed totalSlides - 1
+                        maxIndex = Math.min(maxIndex, totalSlides - 1);
+                    } else {
+                        // If no scroll needed, use the standard calculation
+                        maxIndex = Math.max(0, totalSlides - Math.ceil(slidesToShow));
+                    }
+
+                    // Ensure currentIndex doesn't exceed maxIndex
+                    currentIndex = Math.min(currentIndex, maxIndex);
+
                     // Reverse translateX direction for RTL
                     const translateX = isRTL ? (currentIndex * (slideWidth + gapValue)) : -(currentIndex * (slideWidth + gapValue));
                     carousel.style.transform = `translateX(${translateX}px)`;
+
+                    // Update button states
+                    prevBtn.disabled = currentIndex === 0;
+                    prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+                    nextBtn.disabled = currentIndex >= maxIndex;
+                    nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
                 } else {
                     carousel.style.transform = `translateX(0)`;
                 }
-
-                // Update button states
-                prevBtn.disabled = currentIndex === 0;
-                prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
-                nextBtn.disabled = currentIndex >= maxIndex;
-                nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
             }
 
             function nextSlide() {
                 const slidesToShow = getSlidesToShow();
-                const maxIndex = Math.max(0, totalSlides - Math.ceil(slidesToShow));
+
+                // Calculate maxIndex ensuring last slide is fully visible
+                const container = carousel.parentElement;
+                const firstSlide = slides[0];
+                const slideWidth = firstSlide.offsetWidth;
+                const gap = window.getComputedStyle(carousel).gap;
+                const gapValue = parseFloat(gap) || 0;
+                const containerWidth = container.offsetWidth;
+
+                // Calculate maxIndex to ensure last slide is fully visible
+                const lastSlideStartPosition = (totalSlides - 1) * (slideWidth + gapValue);
+                const maxScrollNeeded = Math.max(0, lastSlideStartPosition + slideWidth - containerWidth);
+
+                let maxIndex = 0;
+                if (maxScrollNeeded > 0) {
+                    maxIndex = Math.ceil(maxScrollNeeded / (slideWidth + gapValue));
+                    maxIndex = Math.min(maxIndex, totalSlides - 1);
+                } else {
+                    maxIndex = Math.max(0, totalSlides - Math.ceil(slidesToShow));
+                }
+
                 if (currentIndex < maxIndex) {
                     currentIndex += 1;
                     updateCarousel();
+                } else if (currentIndex === maxIndex) {
+                    // Double-check: if last slide isn't fully visible, scroll more
+                    const lastSlide = slides[slides.length - 1];
+                    const containerRect = container.getBoundingClientRect();
+                    const lastSlideRect = lastSlide.getBoundingClientRect();
+
+                    // Check if last slide extends beyond container
+                    if (lastSlideRect.right > containerRect.right + 2) { // +2 for tolerance
+                        // Calculate how many more slides we need to move
+                        const overflow = lastSlideRect.right - containerRect.right;
+                        const additionalSlides = Math.ceil(overflow / (slideWidth + gapValue));
+                        currentIndex = Math.min(currentIndex + additionalSlides, totalSlides - 1);
+                        updateCarousel();
+                    }
                 }
             }
 

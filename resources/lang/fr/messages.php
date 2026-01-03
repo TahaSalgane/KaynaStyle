@@ -40,7 +40,7 @@ return [
     'order_success_message' => 'Merci pour votre commande! Nous la livrerons dans les 24 heures.',
     'pajamas' => 'Sacs Marocains',
     'pants' => 'Accessoires Traditionnels',
-    'dresses' => 'Artisanat Fait à la Main',
+    'dresses' => 'Accessoires de Mode',
     'all_products' => 'Tous les produits',
     'filter_by_category' => 'Filtrer par catégorie',
     'sort_by' => 'Trier par',
@@ -574,6 +574,7 @@ return [
     'cash_on_delivery' => 'Paiement à la livraison',
     'cash_on_delivery_text' => 'Payez à la réception de votre commande',
     'good_quality' => 'Qualité Premium',
-    'good_quality_text' => 'Artisanat fait avec soin et attention',
+    'good_quality_text' => 'Sélectionnés avec soin pour la qualité et le style',
+    'hello_whatsapp_message' => 'Bonjour! J\'ai besoin d\'aide avec vos produits.',
 ];
 
