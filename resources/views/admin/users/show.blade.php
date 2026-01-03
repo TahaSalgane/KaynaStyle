@@ -7,19 +7,19 @@
 <div class="max-w-4xl mx-auto">
     <div class="bg-white rounded-lg shadow-md p-6">
         <div class="flex items-center justify-between mb-6">
-            <div class="flex items-center {{ app()->getLocale() === 'ar' ? 'flex-row-reverse' : '' }}">
+            <div class="flex items-center">
                 <div class="w-16 h-16 bg-brown rounded-full flex items-center justify-center">
                     <i class="fas fa-user text-white text-2xl"></i>
                 </div>
-                <div class="{{ app()->getLocale() === 'ar' ? 'mr-4 text-right' : 'ml-4' }}">
+                <div class="ml-4">
                     <h2 class="text-2xl font-bold text-gray-800">{{ $user->name }}</h2>
                     <p class="text-gray-600">{{ $user->email }}</p>
                 </div>
             </div>
-            <div class="flex space-x-2 {{ app()->getLocale() === 'ar' ? 'space-x-reverse' : '' }}">
+            <div class="flex space-x-2">
                 <a href="{{ route('admin.users.edit', $user) }}"
                    class="bg-brown text-white px-4 py-2 rounded-lg hover:bg-brown-darker transition duration-300">
-                    <i class="fas fa-edit {{ app()->getLocale() === 'ar' ? 'ml-2' : 'mr-2' }}"></i>
+                    <i class="fas fa-edit mr-2"></i>
                     {{ __('Edit User') }}
                 </a>
             </div>
@@ -72,7 +72,7 @@
         </div>
 
         <!-- Actions -->
-        <div class="flex justify-end space-x-4 {{ app()->getLocale() === 'ar' ? 'space-x-reverse' : '' }} mt-6">
+        <div class="flex justify-end space-x-4 mt-6">
             <a href="{{ route('admin.users.index') }}"
                class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition duration-300">
                 {{ __('Back to Users') }}

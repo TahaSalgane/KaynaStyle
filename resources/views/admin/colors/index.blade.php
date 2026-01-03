@@ -14,7 +14,7 @@
         <div class="mt-4 sm:mt-0">
             <a href="{{ route('admin.colors.create') }}"
                class="inline-flex items-center px-4 py-2 bg-brown text-white text-sm font-medium rounded-lg hover:bg-brown-hover transition duration-300">
-                <i class="fas fa-plus {{ app()->getLocale() === 'ar' ? 'ml-2' : 'mr-2' }}"></i>
+                <i class="fas fa-plus mr-2"></i>
                 {{ __('Add Color') }}
             </a>
         </div>
@@ -91,7 +91,7 @@
                 <p class="text-gray-600 mb-6">{{ __('Get started by creating your first color.') }}</p>
                 <a href="{{ route('admin.colors.create') }}"
                    class="inline-flex items-center px-4 py-2 bg-brown text-white text-sm font-medium rounded-lg hover:bg-brown-hover transition duration-300">
-                    <i class="fas fa-plus {{ app()->getLocale() === 'ar' ? 'ml-2' : 'mr-2' }}"></i>
+                    <i class="fas fa-plus mr-2"></i>
                     {{ __('Add Color') }}
                 </a>
             </div>

@@ -8,7 +8,7 @@
     <h2 class="text-xl font-semibold text-gray-800">{{ __('Manage Users') }}</h2>
     <a href="{{ route('admin.users.create') }}"
        class="bg-brown text-white px-4 py-2 rounded-lg hover:bg-brown-darker transition duration-300">
-        <i class="fas fa-plus {{ app()->getLocale() === 'ar' ? 'ml-2' : 'mr-2' }}"></i>
+        <i class="fas fa-plus mr-2"></i>
         {{ __('Add New User') }}
     </a>
 </div>
@@ -53,7 +53,7 @@
                             {{ $user->created_at->format('M d, Y') }}
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                            <div class="flex space-x-2 {{ app()->getLocale() === 'ar' ? 'space-x-reverse' : '' }}">
+                            <div class="flex space-x-2">
                                 <a href="{{ route('admin.users.show', $user) }}"
                                    class="text-blue-600 hover:text-blue-800" title="{{ __('View') }}">
                                     <i class="fas fa-eye"></i>
@@ -92,7 +92,7 @@
         <p class="text-gray-500 mb-6">{{ __('Get started by adding your first user.') }}</p>
         <a href="{{ route('admin.users.create') }}"
            class="bg-brown text-white px-6 py-3 rounded-lg hover:bg-brown-darker transition duration-300">
-            <i class="fas fa-plus {{ app()->getLocale() === 'ar' ? 'ml-2' : 'mr-2' }}"></i>
+            <i class="fas fa-plus mr-2"></i>
             {{ __('Add First User') }}
         </a>
     </div>

@@ -1,5 +1,5 @@
 <!-- Filter Sidebar (Off-Canvas) -->
-<div id="filter-sidebar-panel" class="filter-sidebar fixed inset-y-0 w-80 right-0 w-full max-w-md bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 overflow-y-auto">
+<div id="filter-sidebar-panel" class="filter-sidebar fixed inset-y-0 w-[80%] md:w-80 right-0 max-w-md bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 overflow-y-auto">
     <div class="p-6">
         <!-- Header -->
         <div class="flex items-center justify-between mb-6 pb-4 border-b border-gray-200">

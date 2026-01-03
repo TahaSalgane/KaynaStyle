@@ -56,13 +56,13 @@
                 <!-- CTA Buttons with Stagger Animation -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center hero-buttons">
                     <a href="{{ route('products.index') }}"
-                        class="group hero-btn-primary inline-flex items-center bg-white text-brown px-8 py-4 lg:px-10 lg:py-5 rounded-full text-base lg:text-lg font-bold hover:bg-brown hover:text-white transition-all duration-300 transform hover:scale-110 shadow-2xl hover:shadow-brown/50">
+                        class="group hero-btn-primary inline-flex items-center bg-white text-brown px-8 py-3 lg:px-10 lg:py-4 rounded-full text-base lg:text-lg font-bold hover:bg-brown hover:text-white transition-all duration-300 transform hover:scale-110 shadow-2xl hover:shadow-brown/50">
                         <i
                             class="fas fa-shopping-bag {{ app()->getLocale() === 'ar' ? 'ml-3' : 'mr-3' }} group-hover:animate-bounce"></i>
                         {{ __('messages.shop_now') }}
                     </a>
                     <a href="{{ route('categories.index') }}"
-                        class="group hero-btn-secondary inline-flex items-center bg-transparent border-2 border-white text-white px-8 py-4 lg:px-10 lg:py-5 rounded-full text-base lg:text-lg font-bold hover:bg-white hover:text-brown transition-all duration-300 transform hover:scale-110 backdrop-blur-sm">
+                        class="group hero-btn-secondary inline-flex items-center bg-transparent border-2 border-white text-white px-8 py-3 lg:px-10 lg:py-4 rounded-full text-base lg:text-lg font-bold hover:bg-white hover:text-brown transition-all duration-300 transform hover:scale-110 backdrop-blur-sm">
                         <i
                             class="fas fa-th-large {{ app()->getLocale() === 'ar' ? 'ml-3' : 'mr-3' }} group-hover:rotate-12 transition-transform duration-300"></i>
                         {{ __('messages.categories') }}
@@ -177,7 +177,7 @@
             <!-- Section Header with Navigation -->
             <div class="flex items-center justify-between mb-8 scroll-fade-in">
                 <div>
-                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 gradient-text animate-title-in">
+                    <h2 class="text-2xl sm:text-4xl lg:text-5xl font-bold mb-2 gradient-text animate-title-in">
                         {{ __('messages.featured_products') }}
                     </h2>
                 </div>
@@ -324,7 +324,7 @@
             <!-- Section Header with Navigation -->
             <div class="flex items-center justify-between mb-8 scroll-fade-in">
                 <div>
-                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 gradient-text animate-title-in">
+                    <h2 class="text-2xl sm:text-4xl lg:text-5xl font-bold mb-2 gradient-text animate-title-in">
                         {{ __('messages.new_arrivals') }}
                     </h2>
                 </div>
@@ -1411,14 +1411,14 @@
             }
         }
 
-        @media (max-width: 639px) {
+        /* @media (max-width: 639px) {
 
             .featured-product-card,
             .new-arrivals-product-card {
                 width: calc((100% - 1rem) / 2.5);
                 min-width: calc((100% - 1rem) / 2.5);
             }
-        }
+        } */
 
         /* Testimonials Carousel */
         .testimonials-carousel-container {
@@ -1905,13 +1905,17 @@
                 const maxIndex = Math.max(0, totalSlides - Math.ceil(slidesToShow));
                 currentIndex = Math.min(currentIndex, maxIndex);
 
+                // Check if RTL (Arabic)
+                const isRTL = document.documentElement.dir === 'rtl' || document.documentElement.lang === 'ar';
+
                 // Get the first slide to calculate its width including gap
                 if (slides.length > 0) {
                     const firstSlide = slides[0];
                     const slideWidth = firstSlide.offsetWidth;
                     const gap = window.getComputedStyle(carousel).gap;
                     const gapValue = parseFloat(gap) || 0;
-                    const translateX = -(currentIndex * (slideWidth + gapValue));
+                    // Reverse translateX direction for RTL
+                    const translateX = isRTL ? (currentIndex * (slideWidth + gapValue)) : -(currentIndex * (slideWidth + gapValue));
                     carousel.style.transform = `translateX(${translateX}px)`;
                 } else {
                     carousel.style.transform = `translateX(0)`;

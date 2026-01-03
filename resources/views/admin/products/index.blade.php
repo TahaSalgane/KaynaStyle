@@ -8,7 +8,7 @@
     <h2 class="text-lg lg:text-xl font-semibold text-gray-800">{{ __('Manage Products') }}</h2>
     <a href="{{ route('admin.products.create') }}"
        class="bg-brown text-white px-4 py-2 rounded-lg hover:bg-brown-darker transition duration-300 text-sm lg:text-base text-center">
-        <i class="fas fa-plus {{ app()->getLocale() === 'ar' ? 'ml-2' : 'mr-2' }}"></i>
+        <i class="fas fa-plus mr-2"></i>
         {{ __('Add New Product') }}
     </a>
 </div>
@@ -47,7 +47,7 @@
 
                     @if($product->colorImages && $product->colorImages->count() > 1)
                         <span class="inline-flex items-center px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">
-                            <i class="fas fa-images {{ app()->getLocale() === 'ar' ? 'ml-1' : 'mr-1' }}"></i>
+                            <i class="fas fa-images mr-1"></i>
                             {{ $product->colorImages->count() }}
                         </span>
                     @endif
@@ -59,7 +59,7 @@
                 <p class="text-xs lg:text-sm text-gray-600 mb-3 lg:mb-4 truncate">{{ $product->category->name }}</p>
 
                 <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 lg:mb-4 gap-2">
-                    <div class="flex items-center {{ app()->getLocale() === 'ar' ? 'space-x-reverse space-x-2' : 'space-x-2' }}">
+                    <div class="flex items-center space-x-2">
                         @if($product->sale_price)
                             <span class="text-base lg:text-lg font-bold text-brown">${{ $product->sale_price }}</span>
                             <span class="text-xs lg:text-sm text-gray-500 line-through">${{ $product->price }}</span>
@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="flex items-center justify-between">
-                    <div class="flex space-x-1 lg:space-x-2 {{ app()->getLocale() === 'ar' ? 'space-x-reverse' : '' }}">
+                    <div class="flex space-x-1 lg:space-x-2">
                         <a href="{{ route('admin.products.show', $product) }}"
                            class="text-blue-600 hover:text-blue-800 p-1 lg:p-2" title="{{ __('View') }}">
                             <i class="fas fa-eye text-sm lg:text-base"></i>
@@ -120,7 +120,7 @@
         <p class="text-sm lg:text-base text-gray-500 mb-4 lg:mb-6">{{ __('Get started by adding your first product.') }}</p>
         <a href="{{ route('admin.products.create') }}"
            class="bg-brown text-white px-4 lg:px-6 py-2 lg:py-3 rounded-lg hover:bg-brown-darker transition duration-300 text-sm lg:text-base">
-            <i class="fas fa-plus {{ app()->getLocale() === 'ar' ? 'ml-2' : 'mr-2' }}"></i>
+            <i class="fas fa-plus mr-2"></i>
             {{ __('Add First Product') }}
         </a>
     </div>

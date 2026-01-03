@@ -8,7 +8,7 @@
     <h2 class="text-xl font-semibold text-gray-800">{{ __('Manage Hero Images') }}</h2>
     <a href="{{ route('admin.hero-images.create') }}"
        class="bg-brown text-white px-4 py-2 rounded-lg hover:bg-brown-darker transition duration-300">
-        <i class="fas fa-plus {{ app()->getLocale() === 'ar' ? 'ml-2' : 'mr-2' }}"></i>
+        <i class="fas fa-plus mr-2"></i>
         {{ __('Add New Image') }}
     </a>
 </div>
@@ -35,7 +35,7 @@
                     <span class="text-sm text-gray-500">
                         {{ __('Order') }}: {{ $image->order }}
                     </span>
-                    <div class="flex space-x-2 {{ app()->getLocale() === 'ar' ? 'space-x-reverse' : '' }}">
+                    <div class="flex space-x-2">
                         <a href="{{ route('admin.hero-images.edit', $image) }}"
                            class="text-blue-600 hover:text-blue-800">
                             <i class="fas fa-edit"></i>
@@ -68,7 +68,7 @@
         <p class="text-gray-500 mb-6">{{ __('Get started by adding your first hero image.') }}</p>
         <a href="{{ route('admin.hero-images.create') }}"
            class="bg-brown text-white px-6 py-3 rounded-lg hover:bg-brown-darker transition duration-300">
-            <i class="fas fa-plus {{ app()->getLocale() === 'ar' ? 'ml-2' : 'mr-2' }}"></i>
+            <i class="fas fa-plus mr-2"></i>
             {{ __('Add First Image') }}
         </a>
     </div>

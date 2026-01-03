@@ -82,7 +82,6 @@
                             <option value="newest">{{ __('messages.newest') }}</option>
                             <option value="price_low">{{ __('messages.price_low_to_high') }}</option>
                             <option value="price_high">{{ __('messages.price_high_to_low') }}</option>
-                            <option value="name">{{ __('messages.name') }}</option>
                         </select>
                     </div>
                 </div>
@@ -480,6 +479,7 @@
     /* Filter Sidebar Styles */
     .filter-sidebar {
         max-height: 100vh;
+        z-index: 9999 !important;
     }
 
     .filter-sidebar.open {
@@ -2428,13 +2428,23 @@ function updateProgress() {
     const progress = document.querySelector('.dual-range-progress');
 
     if (minRange && maxRange && progress) {
+        const isRTL = document.documentElement.dir === 'rtl' || document.documentElement.lang === 'ar';
         const min = parseInt(minRange.value);
         const max = parseInt(maxRange.value);
         const minPercent = (min / 1000) * 100;
         const maxPercent = (max / 1000) * 100;
 
-        progress.style.left = minPercent + '%';
-        progress.style.width = (maxPercent - minPercent) + '%';
+        if (isRTL) {
+            // In RTL, use right instead of left
+            progress.style.right = minPercent + '%';
+            progress.style.left = 'auto';
+            progress.style.width = (maxPercent - minPercent) + '%';
+        } else {
+            // In LTR, use left
+            progress.style.left = minPercent + '%';
+            progress.style.right = 'auto';
+            progress.style.width = (maxPercent - minPercent) + '%';
+        }
     }
 }
 

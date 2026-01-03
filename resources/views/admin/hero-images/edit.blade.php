@@ -69,7 +69,7 @@
             </div>
 
             <!-- Submit Buttons -->
-            <div class="flex justify-end space-x-4 {{ app()->getLocale() === 'ar' ? 'space-x-reverse' : '' }} mt-8">
+            <div class="flex justify-end space-x-4 mt-8">
                 <a href="{{ route('admin.hero-images.index') }}"
                    class="px-6 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition duration-300">
                     {{ __('Cancel') }}

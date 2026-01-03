@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -88,7 +88,7 @@
                 <!-- Submit Button -->
                 <button type="submit"
                         class="w-full bg-brown text-white py-3 px-4 rounded-lg font-semibold hover:bg-brown-darker transition duration-300 transform hover:scale-105 shadow-lg">
-                    <i class="fas fa-sign-in-alt {{ app()->getLocale() === 'ar' ? 'ml-2' : 'mr-2' }}"></i>
+                    <i class="fas fa-sign-in-alt mr-2"></i>
                     {{ __('Sign In') }}
                 </button>
             </form>

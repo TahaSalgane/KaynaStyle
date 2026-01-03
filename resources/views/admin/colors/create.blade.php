@@ -7,10 +7,10 @@
 <div class="max-w-2xl mx-auto">
     <!-- Header -->
     <div class="mb-6">
-        <div class="flex items-center {{ app()->getLocale() === 'ar' ? 'flex-row-reverse' : '' }}">
+        <div class="flex items-center">
             <a href="{{ route('admin.colors.index') }}"
                class="inline-flex items-center text-gray-600 hover:text-brown transition-colors duration-300">
-                <i class="fas fa-arrow-left {{ app()->getLocale() === 'ar' ? 'ml-2' : 'mr-2' }}"></i>
+                <i class="fas fa-arrow-left mr-2"></i>
                 {{ __('Back to Colors') }}
             </a>
         </div>

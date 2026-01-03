@@ -62,14 +62,14 @@
             </div>
 
             <!-- Submit Buttons -->
-            <div class="flex justify-end space-x-4 {{ app()->getLocale() === 'ar' ? 'space-x-reverse' : '' }} mt-8">
+            <div class="flex justify-end space-x-4 mt-8">
                 <a href="{{ route('admin.users.index') }}"
                    class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition duration-300">
                     {{ __('Cancel') }}
                 </a>
                 <button type="submit"
                         class="px-6 py-3 bg-brown text-white rounded-lg hover:bg-brown-darker transition duration-300">
-                    <i class="fas fa-save {{ app()->getLocale() === 'ar' ? 'ml-2' : 'mr-2' }}"></i>
+                    <i class="fas fa-save mr-2"></i>
                     {{ __('Update User') }}
                 </button>
             </div>

@@ -75,21 +75,9 @@ class CategoryController extends Controller
 
         $products = $query->paginate(12);
 
-        // Get available colors for this category
-        $productsInCategory = Product::where('category_id', $category->id)
-            ->where('is_active', true)
-            ->get();
-
-        $availableColorNames = collect();
-        foreach ($productsInCategory as $product) {
-            if ($product->colors) {
-                $availableColorNames = $availableColorNames->merge($product->colors);
-            }
-        }
-
-        $availableColors = \App\Models\Color::whereIn('name_en', $availableColorNames->unique())
-            ->where('is_active', true)
-            ->distinct()
+        // Get all active colors (not just available in this category)
+        $availableColors = \App\Models\Color::where('is_active', true)
+            ->orderBy('name_en')
             ->get();
 
         // Get all reviews for summary statistics (rating distribution, average, etc.)

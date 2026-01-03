@@ -14,7 +14,7 @@
         <div class="mt-4 sm:mt-0">
             <a href="{{ route('admin.sizes.create') }}"
                class="inline-flex items-center px-4 py-2 bg-brown text-white text-sm font-medium rounded-lg hover:bg-brown-hover transition duration-300">
-                <i class="fas fa-plus {{ app()->getLocale() === 'ar' ? 'ml-2' : 'mr-2' }}"></i>
+                <i class="fas fa-plus mr-2"></i>
                 {{ __('Add Size') }}
             </a>
         </div>
@@ -120,17 +120,17 @@
                         </div>
                     </div>
 
-                    <div class="flex space-x-3 {{ app()->getLocale() === 'ar' ? 'space-x-reverse' : '' }}">
+                    <div class="flex space-x-3"></div>
                         <a href="{{ route('admin.sizes.edit', $size) }}"
                            class="flex-1 bg-brown text-white text-center py-2 px-4 rounded-lg hover:bg-brown-hover transition-colors text-sm">
-                            <i class="fas fa-edit {{ app()->getLocale() === 'ar' ? 'ml-2' : 'mr-2' }}"></i>
+                            <i class="fas fa-edit mr-2"></i>
                             {{ __('Edit') }}
                         </a>
                         <form action="{{ route('admin.sizes.toggle-active', $size) }}" method="POST" class="flex-1">
                             @csrf
                             @method('PATCH')
                             <button type="submit" class="w-full bg-gray-600 text-white py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors text-sm">
-                                <i class="fas fa-{{ $size->is_active ? 'eye-slash' : 'eye' }} {{ app()->getLocale() === 'ar' ? 'ml-2' : 'mr-2' }}"></i>
+                                <i class="fas fa-{{ $size->is_active ? 'eye-slash' : 'eye' }} mr-2"></i>
                                 {{ $size->is_active ? __('Deactivate') : __('Activate') }}
                             </button>
                         </form>
@@ -139,7 +139,7 @@
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="w-full bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors text-sm">
-                                <i class="fas fa-trash {{ app()->getLocale() === 'ar' ? 'ml-2' : 'mr-2' }}"></i>
+                                <i class="fas fa-trash mr-2"></i>
                                 {{ __('Delete') }}
                             </button>
                         </form>
@@ -156,7 +156,7 @@
                 <p class="text-sm lg:text-base text-gray-600 mb-4 lg:mb-6">{{ __('Get started by creating your first size.') }}</p>
                 <a href="{{ route('admin.sizes.create') }}"
                    class="inline-flex items-center px-4 py-2 bg-brown text-white text-sm font-medium rounded-lg hover:bg-brown-hover transition duration-300">
-                    <i class="fas fa-plus {{ app()->getLocale() === 'ar' ? 'ml-2' : 'mr-2' }}"></i>
+                    <i class="fas fa-plus mr-2"></i>
                     {{ __('Add Size') }}
                 </a>
             </div>

@@ -294,22 +294,6 @@
                                 </div>
                             </div>
 
-                            <!-- Delivery Info -->
-                            <div class="mb-6 pb-6 border-b border-gray-200">
-                                <div class="bg-green-50 border border-green-200 rounded-lg p-4">
-                                    <div
-                                        class="flex items-center {{ app()->getLocale() === 'ar' ? 'space-x-reverse space-x-3' : 'space-x-3' }}">
-                                        <div class="flex-shrink-0">
-                                            <i class="fas fa-truck text-green-600 text-xl"></i>
-                                        </div>
-                                        <div class="flex-1">
-                                            <h3 class="text-sm font-semibold text-gray-900">
-                                                {{ __('messages.free_delivery_title') }}
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         @endif
 
                         @if ($product->stock_quantity <= 0)
@@ -337,13 +321,11 @@
                                     style="background-color: #DB1215; border-radius: 30px;"
                                     onmouseover="this.style.backgroundColor='#b80e11'"
                                     onmouseout="this.style.backgroundColor='#DB1215'">
-                                    <i
-                                        class="fas fa-bolt {{ app()->getLocale() === 'ar' ? 'ml-1 sm:ml-2' : 'mr-1 sm:mr-2' }}"></i>
                                     <span>{{ __('messages.buy_it_now') }}</span>
                                 </button>
                             @endif
 
-                            @if ($product->stock_quantity > 0)
+                            {{-- @if ($product->stock_quantity > 0)
                                 <!-- Add to Cart and Wishlist Row -->
                                 <div class="flex items-center gap-3 mt-3">
                                     <!-- Add to Cart Button -->
@@ -366,7 +348,7 @@
                                             id="wishlist-icon-{{ $product->id }}"></i>
                                     </button>
                                 </div>
-                            @endif
+                            @endif --}}
                         @else
                             <!-- Buy it Now Button -->
                             <button type="button" onclick="buyItNow()" id="buy-it-now-btn"
@@ -374,13 +356,11 @@
                                 style="background-color: #DB1215; border-radius: 30px;"
                                 onmouseover="this.style.backgroundColor='#b80e11'"
                                 onmouseout="this.style.backgroundColor='#DB1215'">
-                                <i
-                                    class="fas fa-bolt {{ app()->getLocale() === 'ar' ? 'ml-1 sm:ml-2' : 'mr-1 sm:mr-2' }}"></i>
                                 <span>{{ __('messages.buy_it_now') }}</span>
                             </button>
 
                             <!-- Add to Cart and Wishlist Row -->
-                            <div class="flex items-center gap-3 mt-3">
+                            {{-- <div class="flex items-center gap-3 mt-3">
                                 <!-- Add to Cart Button -->
                                 <button type="button" onclick="addToCart()" id="add-to-cart-btn"
                                     class="flex-1 btn-brown-gradient py-3 sm:py-3 text-sm sm:text-base lg:text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center"
@@ -399,13 +379,45 @@
                                     <i class="far fa-heart text-lg sm:text-xl"
                                         id="wishlist-icon-{{ $product->id }}"></i>
                                 </button>
-                            </div>
+                            </div> --}}
                         @endif
                     </form>
+                    <!-- Delivery, Payment & Quality Info -->
+                    <div class="mb-4 pb-4 pt-3">
+                        <div class="grid grid-cols-3 gap-2.5">
+                            <!-- Free Delivery -->
+                            <div
+                                class="flex flex-col items-center bg-gray-50 rounded-lg px-2.5 py-2.5">
+                                <div class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center mb-1.5">
+                                    <i class="fas fa-truck text-white text-xs"></i>
+                                </div>
+                                <span class="text-xs font-medium text-gray-700 text-center leading-tight">شحن مجاني</span>
+                            </div>
 
+                            <!-- Cash on Delivery -->
+                            <div
+                                class="flex flex-col items-center bg-gray-50 rounded-lg px-2.5 py-2.5">
+                                <div class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center mb-1.5">
+                                    <i class="fas fa-money-bill-wave text-white text-xs"></i>
+                                </div>
+                                <span class="text-xs font-medium text-gray-700 text-center leading-tight">الدفع عند
+                                    الاستلام</span>
+                            </div>
+
+                            <!-- Premium Quality -->
+                            <div
+                                class="flex flex-col items-center bg-gray-50 rounded-lg px-2.5 py-2.5">
+                                <div class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center mb-1.5">
+                                    <i class="fas fa-award text-white text-xs"></i>
+                                </div>
+                                <span class="text-xs font-medium text-gray-700 text-center leading-tight">جودة
+                                    ممتازة</span>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Product Extra Links -->
                     <div
-                        class="flex flex-wrap items-center gap-4 mt-6 pt-6 border-t border-gray-200 {{ app()->getLocale() === 'ar' ? 'flex-row-reverse' : '' }}">
+                        class="flex flex-wrap items-center gap-4 mt-6 pt-6 border-t border-gray-200">
                         <button type="button" onclick="openAskQuestionModal()"
                             class="product-extra-link-item flex items-center transition-colors font-semibold {{ app()->getLocale() === 'ar' ? 'flex-row-reverse' : '' }}"
                             style="color: #8B6F47;">
@@ -453,7 +465,7 @@
                                     {{ __('messages.full_name') }} *
                                 </label>
                                 <input type="text" id="full_name" name="full_name" required
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brown focus:border-transparent transition duration-300"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brown focus:border-transparent transition duration-300"
                                     placeholder="{{ __('messages.enter_full_name') }}">
                             </div>
 
@@ -462,8 +474,8 @@
                                 <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">
                                     {{ __('messages.phone_number') }} *
                                 </label>
-                                <input type="tel" id="phone" name="phone" required
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brown focus:border-transparent transition duration-300"
+                                <input type="text" id="phone" name="phone" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brown focus:border-transparent transition duration-300"
                                     placeholder="{{ __('messages.enter_phone_number') }}">
                             </div>
 
@@ -473,7 +485,7 @@
                                     {{ __('messages.city') }} *
                                 </label>
                                 <select id="city" name="city" required
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brown focus:border-transparent transition duration-300">
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brown focus:border-transparent transition duration-300">
                                     <option value="">{{ __('messages.select_city') }}</option>
                                     @foreach ($moroccanCities as $city)
                                         <option value="{{ $city['en'] }}">
@@ -487,33 +499,30 @@
                                 <label for="address" class="block text-sm font-semibold text-gray-700 mb-2">
                                     {{ __('messages.address') }} *
                                 </label>
-                                <textarea id="address" name="address" required rows="3"
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brown focus:border-transparent transition duration-300 resize-none"
-                                    placeholder="{{ __('messages.enter_complete_address') }}"></textarea>
-                            </div>
-
-                            <!-- Notes (Optional) -->
-                            <div>
-                                <label for="notes" class="block text-sm font-semibold text-gray-700 mb-2">
-                                    {{ __('messages.additional_notes_optional') }}
-                                </label>
-                                <textarea id="notes" name="notes" rows="2"
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brown focus:border-transparent transition duration-300 resize-none"
-                                    placeholder="{{ __('messages.any_additional_notes') }}"></textarea>
+                                <input id="address" name="address" required rows="3"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brown focus:border-transparent transition duration-300 resize-none"
+                                    placeholder="{{ __('messages.enter_complete_address') }}"></input>
                             </div>
 
                             <!-- Submit Button -->
                             <button type="submit" id="submit-order-btn"
-                                class="w-full btn-brown-gradient py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                                <i class="fas fa-credit-card {{ app()->getLocale() === 'ar' ? 'ml-2' : 'mr-2' }}"></i>
-                                {{ __('messages.confirm_order') }}
+                                class="group relative w-full overflow-hidden bg-gradient-to-r from-emerald-500 via-green-600 to-emerald-600 text-white py-2 px-6 rounded-2xl text-lg font-bold transition-all duration-500 transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-500/40 shadow-xl border border-emerald-400/30">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-r from-emerald-400/0 via-white/20 to-emerald-400/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700">
+                                </div>
+                                <div class="relative flex items-center justify-center">
+                                    <span class="tracking-wide">{{ __('messages.confirm_order') }}</span>
+                                </div>
                             </button>
 
                             <!-- Cancel Button -->
                             <button type="button" onclick="hideCheckoutForm()"
-                                class="w-full bg-gray-500 text-white py-3 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                                <i class="fas fa-times {{ app()->getLocale() === 'ar' ? 'ml-2' : 'mr-2' }}"></i>
-                                {{ __('messages.cancel') }}
+                                class="group w-full bg-white border-2 border-gray-300 text-gray-700 py-2 px-6 rounded-2xl text-lg font-semibold transition-all duration-300 transform hover:scale-[1.01] hover:border-red-400 hover:text-red-600 hover:bg-red-50 hover:shadow-lg shadow-md">
+                                <div class="flex items-center justify-center">
+                                    <i
+                                        class="fas fa-times {{ app()->getLocale() === 'ar' ? 'ml-3' : 'mr-3' }} text-xl transition-transform group-hover:rotate-90 duration-300"></i>
+                                    <span class="tracking-wide">{{ __('messages.cancel') }}</span>
+                                </div>
                             </button>
                         </form>
                     </div>
@@ -833,7 +842,6 @@
                         style="background-color: #DB1215; border-radius: 30px;"
                         onmouseover="this.style.backgroundColor='#b80e11'"
                         onmouseout="this.style.backgroundColor='#DB1215'">
-                        <i class="fas fa-bolt {{ app()->getLocale() === 'ar' ? 'ml-2' : 'mr-2' }}"></i>
                         <span class="sticky-add-to-cart-text">{{ __('messages.buy_it_now') }}</span>
                     </button>
                 @endif
@@ -1021,6 +1029,96 @@
 
 @push('styles')
     @vite(['resources/css/product.css'])
+
+    <style>
+        /* Enhanced Button Styles */
+        .bg-gradient-to-r {
+            background-size: 200% 200%;
+            animation: gradientShift 3s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Brown color definitions */
+        .from-brown-600 {
+            --tw-gradient-from: #7c2d12;
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(124, 45, 18, 0));
+        }
+
+        .via-brown-700 {
+            --tw-gradient-via: #9a3412;
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to, rgba(154, 52, 18, 0));
+        }
+
+        .to-brown-800 {
+            --tw-gradient-to: #c2410c;
+        }
+
+        .shadow-brown-500\/30 {
+            --tw-shadow-color: rgb(154 52 18 / 0.3);
+            --tw-shadow: var(--tw-shadow-colored);
+        }
+
+        .border-brown-600\/20 {
+            border-color: rgb(124 45 18 / 0.2);
+        }
+
+        /* Button hover effects */
+        #submit-order-btn:hover {
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.4), 0 0 20px rgba(16, 185, 129, 0.2);
+        }
+
+        /* Focus states for accessibility */
+        #submit-order-btn:focus-visible,
+        button[onclick="hideCheckoutForm()"]:focus-visible {
+            outline: 2px solid #10b981;
+            outline-offset: 2px;
+        }
+
+        /* Active states */
+        #submit-order-btn:active {
+            transform: scale(0.98);
+        }
+
+        button[onclick="hideCheckoutForm()"]:active {
+            transform: scale(0.98);
+        }
+
+        /* Buy It Now Button Animation - Slow Continuous Left Right */
+        @keyframes slowSway {
+            0%, 100% {
+                transform: translateX(-10px);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+        }
+
+        #buy-it-now-btn,
+        #sticky-add-to-cart-btn {
+            animation: slowSway 2.5s ease-in-out infinite;
+            position: relative;
+        }
+
+        /* Pause animation on hover and apply scale effect */
+        #buy-it-now-btn:hover,
+        #sticky-add-to-cart-btn:hover {
+            animation-play-state: paused;
+            transform: translateX(0) scale(1.05) !important;
+        }
+    </style>
 @endpush
 @push('scripts')
     <script>
@@ -1847,10 +1945,12 @@
             const checkoutForm = document.getElementById('checkout-form');
             checkoutForm.classList.remove('hidden');
 
-            // Scroll to the form smoothly
-            checkoutForm.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            // Scroll to the form smoothly with offset to account for navbar
+            const formPosition = checkoutForm.getBoundingClientRect().top + window.pageYOffset;
+            const offset = 120; // Offset to show form header above navbar
+            window.scrollTo({
+                top: formPosition - offset,
+                behavior: 'smooth'
             });
 
             // Reset form fields
@@ -2411,13 +2511,17 @@
                         '<i class="fas fa-spinner fa-spin {{ app()->getLocale() === 'ar' ? 'ml-2' : 'mr-2' }}"></i>{{ __('messages.processing') }}';
                     submitBtn.disabled = true;
 
+                    // Get CSRF token from meta tag or form
+                    const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') ||
+                        orderForm.querySelector('input[name="_token"]')?.value ||
+                        '';
+
                     // Submit form
                     fetch('{{ route('orders.store') }}', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
-                                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')
-                                    .getAttribute('content'),
+                                'X-CSRF-TOKEN': csrfToken,
                                 'Accept': 'application/json'
                             },
                             body: JSON.stringify({
@@ -2434,26 +2538,35 @@
                                     .value,
                                 phone: orderForm.querySelector('input[name="phone"]').value,
                                 city: orderForm.querySelector('select[name="city"]').value,
-                                address: orderForm.querySelector('textarea[name="address"]')
+                                address: orderForm.querySelector('input[name="address"]')
                                     .value,
-                                notes: orderForm.querySelector('textarea[name="notes"]')
-                                    .value || ''
+                                notes: (orderForm.querySelector('textarea[name="notes"]') || orderForm.querySelector('input[name="notes"]'))?.value || ''
                             })
                         })
                         .then(response => {
-                            return response.json().then(data => {
-                                if (!response.ok) {
-                                    // Handle validation errors
-                                    if (response.status === 422 && data.errors) {
-                                        const errorMessages = Object.values(data.errors).flat()
-                                            .join('\n');
-                                        throw new Error(errorMessages);
+                            // Check if response is JSON
+                            const contentType = response.headers.get('content-type');
+                            if (contentType && contentType.includes('application/json')) {
+                                return response.json().then(data => {
+                                    if (!response.ok) {
+                                        // Handle validation errors
+                                        if (response.status === 422 && data.errors) {
+                                            const errorMessages = Object.values(data.errors).flat()
+                                                .join('\n');
+                                            throw new Error(errorMessages);
+                                        }
+                                        throw new Error(data.message ||
+                                            '{{ __('messages.error_processing_order') }}');
                                     }
-                                    throw new Error(data.message ||
-                                        '{{ __('messages.error_processing_order') }}');
-                                }
-                                return data;
-                            });
+                                    return data;
+                                });
+                            } else {
+                                // If not JSON, try to get text response
+                                return response.text().then(text => {
+                                    console.error('Non-JSON response:', text);
+                                    throw new Error('{{ __('messages.error_processing_order') }}');
+                                });
+                            }
                         })
                         .then(data => {
                             if (data.success) {

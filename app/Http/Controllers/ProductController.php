@@ -81,17 +81,9 @@ class ProductController extends Controller
         $products = $query->paginate(12);
         $categories = Category::where('is_active', true)->get();
 
-        // Get available colors for all products
-        $allProducts = Product::where('is_active', true)->get();
-        $availableColorNames = collect();
-        foreach ($allProducts as $product) {
-            if ($product->colors) {
-                $availableColorNames = $availableColorNames->merge($product->colors);
-            }
-        }
-
-        $availableColors = \App\Models\Color::whereIn('name_en', $availableColorNames->unique())
-            ->where('is_active', true)
+        // Get all active colors (not just available in products)
+        $availableColors = \App\Models\Color::where('is_active', true)
+            ->orderBy('name_en')
             ->get();
 
         // If AJAX request, return JSON

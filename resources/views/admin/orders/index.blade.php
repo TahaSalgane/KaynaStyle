@@ -61,7 +61,7 @@
                             {{ $order->created_at->format('M d, Y') }}
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                            <div class="flex space-x-2 {{ app()->getLocale() === 'ar' ? 'space-x-reverse' : '' }}">
+                            <div class="flex space-x-2">
                                 <a href="{{ route('admin.orders.show', $order) }}"
                                    class="text-blue-600 hover:text-blue-800" title="{{ __('View') }}">
                                     <i class="fas fa-eye"></i>
@@ -116,10 +116,10 @@
                     </div>
                 </div>
 
-                <div class="flex space-x-3 {{ app()->getLocale() === 'ar' ? 'space-x-reverse' : '' }}">
+                <div class="flex space-x-3">
                     <a href="{{ route('admin.orders.show', $order) }}"
                        class="flex-1 bg-blue-600 text-white text-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-sm">
-                        <i class="fas fa-eye {{ app()->getLocale() === 'ar' ? 'ml-2' : 'mr-2' }}"></i>
+                        <i class="fas fa-eye mr-2"></i>
                         {{ __('View') }}
                     </a>
                     <form method="POST" action="{{ route('admin.orders.destroy', $order) }}" class="flex-1"
@@ -127,7 +127,7 @@
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="w-full bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors text-sm">
-                            <i class="fas fa-trash {{ app()->getLocale() === 'ar' ? 'ml-2' : 'mr-2' }}"></i>
+                            <i class="fas fa-trash mr-2"></i>
                             {{ __('Delete') }}
                         </button>
                     </form>
