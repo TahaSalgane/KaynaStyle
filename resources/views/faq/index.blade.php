@@ -24,8 +24,8 @@
                         'answer' => __('messages.faq_answer_1')
                     ],
                     [
-                        'question' => __('messages.faq_question_2'),
-                        'answer' => __('messages.faq_answer_2')
+                        'question' => __('messages.faq_question_payment'),
+                        'answer' => __('messages.faq_answer_payment')
                     ],
                     [
                         'question' => __('messages.faq_question_3'),
@@ -34,10 +34,6 @@
                     [
                         'question' => __('messages.faq_question_4'),
                         'answer' => __('messages.faq_answer_4')
-                    ],
-                    [
-                        'question' => __('messages.faq_question_5'),
-                        'answer' => __('messages.faq_answer_5')
                     ]
                 ];
             @endphp
